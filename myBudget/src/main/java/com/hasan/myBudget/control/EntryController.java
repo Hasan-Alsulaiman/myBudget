@@ -1,5 +1,6 @@
 package com.hasan.myBudget.control;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.hasan.myBudget.model.Entry;
 import com.hasan.myBudget.service.EntryService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("entry")
+@RequestMapping("api/entry")
 public class EntryController {
     @Autowired
     EntryService entryService;
@@ -17,12 +18,12 @@ public class EntryController {
         this.entryService = entryService;
     }
 
-    @GetMapping("getAll")
+    @GetMapping(path = "getAll")
     public List<Entry> getAll() {
         return entryService.getAll();
     }
 
-    @PostMapping("addEntry")
+    @PutMapping(path = "addEntry")
     public int addEntry(@RequestBody Entry entry) {
         return entryService.addEntry(entry);
     }

@@ -6,19 +6,13 @@ public class Entry {
     int id, amount;
     String type, description, date;
 
-    public Entry(@JsonProperty("amount") int amount,
-                 @JsonProperty("type") String type) {
-        this.amount = amount;
-        this.type = type;
-    }
-
-    public Entry(@JsonProperty("amount") int amount,
-                 @JsonProperty("type") String type,
-                 @JsonProperty("description") String description) {
-        this.amount = amount;
-        this.type = type;
-        this.description = description;
-    }
+//    public Entry(@JsonProperty("amount") int amount,
+//                 @JsonProperty("type") String type,
+//                 @JsonProperty("description") String description) {
+//        this.amount = amount;
+//        this.type = type;
+//        this.description = description;
+//    }
 
     public Entry(int id,
                  @JsonProperty("amount")int amount,

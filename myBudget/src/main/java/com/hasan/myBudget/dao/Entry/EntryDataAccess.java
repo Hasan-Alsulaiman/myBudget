@@ -29,4 +29,10 @@ public class EntryDataAccess implements EntryDao{
                 "VALUES (?, ?, ?)";
         return jdbcTemplate.update(sql, entry.getType(), entry.getAmount(), entry.getDescription());
     }
+
+    @Override
+    public double getavg() {
+        var sql = "SELECT AVG(amount) FROM expenses";
+        return jdbcTemplate.queryForObject(sql, Double.class);
+    }
 }

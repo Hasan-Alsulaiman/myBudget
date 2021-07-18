@@ -24,4 +24,8 @@ public class EntryService {
     public int addEntry(Entry entry) {
         return entryDao.addEntry(entry);
     }
+
+    public double getAvg() {
+        return entryDao.getavg();
+    }
 }

@@ -23,8 +23,13 @@ public class EntryController {
         return entryService.getAll();
     }
 
-    @PutMapping(path = "addEntry")
+    @PostMapping(path = "addEntry")
     public int addEntry(@RequestBody Entry entry) {
         return entryService.addEntry(entry);
+    }
+
+    @GetMapping(path = "average")
+    public double getAvg() {
+        return entryService.getAvg();
     }
 }

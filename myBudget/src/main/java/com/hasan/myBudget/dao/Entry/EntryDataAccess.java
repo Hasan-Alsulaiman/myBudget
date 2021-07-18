@@ -1,4 +1,4 @@
-package com.hasan.myBudget.dao;
+package com.hasan.myBudget.dao.Entry;
 
 import com.hasan.myBudget.model.Entry;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,5 +21,12 @@ public class EntryDataAccess implements EntryDao{
     public List<Entry> getAll() {
         var sql = "SELECT * FROM expenses";
         return jdbcTemplate.query(sql, new EntryMapper());
+    }
+
+    @Override
+    public int addEntry(Entry entry) {
+        var sql = "INSERT INTO expenses (type, amount, description)" +
+                "VALUES (?, ?, ?)";
+        return jdbcTemplate.update(sql, entry.getType(), entry.getAmount(), entry.getDescription());
     }
 }

@@ -1,4 +1,4 @@
-package com.hasan.myBudget.dao;
+package com.hasan.myBudget.dao.Entry;
 
 import com.hasan.myBudget.model.Entry;
 import org.springframework.jdbc.core.RowMapper;

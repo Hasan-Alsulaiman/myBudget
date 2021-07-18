@@ -1,6 +1,6 @@
 package com.hasan.myBudget.service;
 
-import com.hasan.myBudget.dao.EntryDao;
+import com.hasan.myBudget.dao.Entry.EntryDao;
 import com.hasan.myBudget.model.Entry;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -19,5 +19,9 @@ public class EntryService {
 
     public List<Entry> getAll() {
         return entryDao.getAll();
+    }
+
+    public int addEntry(Entry entry) {
+        return entryDao.addEntry(entry);
     }
 }

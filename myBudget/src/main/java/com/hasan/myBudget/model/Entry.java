@@ -12,7 +12,11 @@ public class Entry {
         this.type = type;
     }
 
-    public Entry(int id, int amount, String type, String description, String date) {
+    public Entry(int id,
+                 @JsonProperty("amount")int amount,
+                 @JsonProperty("type")String type,
+                 @JsonProperty("description")String description,
+                 String date) {
         this.id = id;
         this.amount = amount;
         this.type = type;

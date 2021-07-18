@@ -3,10 +3,7 @@ package com.hasan.myBudget.control;
 import com.hasan.myBudget.model.Entry;
 import com.hasan.myBudget.service.EntryService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -26,7 +23,7 @@ public class EntryController {
     }
 
     @PostMapping("addEntry")
-    public int addEntry(Entry entry) {
+    public int addEntry(@RequestBody Entry entry) {
         return entryService.addEntry(entry);
     }
 }

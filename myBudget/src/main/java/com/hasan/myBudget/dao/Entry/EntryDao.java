@@ -13,6 +13,8 @@ public interface EntryDao {
 
     int updateDescription(Entry entry);
 
+    int deleteEntry(int id);
+
     double getavg();
 
 }

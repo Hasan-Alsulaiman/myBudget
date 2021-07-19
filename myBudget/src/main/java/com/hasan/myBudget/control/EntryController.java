@@ -41,4 +41,9 @@ public class EntryController {
     public int updateDescription(@RequestBody Entry entry) {
         return entryService.updateDescription(entry);
     }
+
+    @DeleteMapping(path = "deleteEntry{id}")
+    public int deleteEntry(@PathVariable int id) {
+        return entryService.deleteEntry(id);
+    }
 }

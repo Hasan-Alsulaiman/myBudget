@@ -43,6 +43,12 @@ public class EntryDataAccess implements EntryDao{
     }
 
     @Override
+    public int deleteEntry(int id) {
+        var sql = "DELETE FROM expenses WHERE id = (?)";
+        return jdbcTemplate.update(sql, id);
+    }
+
+    @Override
     public double getavg() {
         var sql = "SELECT AVG(amount) FROM expenses";
         return jdbcTemplate.queryForObject(sql, Double.class);

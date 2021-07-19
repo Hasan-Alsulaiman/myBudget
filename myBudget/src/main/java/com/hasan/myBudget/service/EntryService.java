@@ -36,4 +36,8 @@ public class EntryService {
     public int updateDescription(Entry entry) {
         return entryDao.updateDescription(entry);
     }
+
+    public int deleteEntry(int id) {
+        return entryDao.deleteEntry(id);
+    }
 }

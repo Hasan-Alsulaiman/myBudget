@@ -28,4 +28,8 @@ public class EntryService {
     public double getAvg() {
         return entryDao.getavg();
     }
+
+    public int updateAmount(Entry entry) {
+        return entryDao.updateAmount(entry);
+    }
 }

@@ -1,6 +1,5 @@
 package com.hasan.myBudget.control;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 import com.hasan.myBudget.model.Entry;
 import com.hasan.myBudget.service.EntryService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,5 +30,10 @@ public class EntryController {
     @GetMapping(path = "average")
     public double getAvg() {
         return entryService.getAvg();
+    }
+
+    @PostMapping(path = "updateAmount")
+    public int updateAmount(Entry entry) {
+        return entryService.updateAmount(entry);
     }
 }

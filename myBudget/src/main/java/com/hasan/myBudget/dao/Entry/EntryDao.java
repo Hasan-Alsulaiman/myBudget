@@ -9,6 +9,8 @@ public interface EntryDao {
 
     int addEntry(Entry entry);
 
+    int updateAmount(Entry entry);
+
     double getavg();
 
 }

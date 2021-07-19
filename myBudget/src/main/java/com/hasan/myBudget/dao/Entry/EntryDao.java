@@ -11,6 +11,8 @@ public interface EntryDao {
 
     int updateAmount(Entry entry);
 
+    int updateDescription(Entry entry);
+
     double getavg();
 
 }

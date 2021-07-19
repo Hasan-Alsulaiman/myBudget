@@ -33,7 +33,12 @@ public class EntryController {
     }
 
     @PostMapping(path = "updateAmount")
-    public int updateAmount(Entry entry) {
+    public int updateAmount(@RequestBody Entry entry) {
         return entryService.updateAmount(entry);
+    }
+
+    @PostMapping(path = "updateDescription")
+    public int updateDescription(@RequestBody Entry entry) {
+        return entryService.updateDescription(entry);
     }
 }

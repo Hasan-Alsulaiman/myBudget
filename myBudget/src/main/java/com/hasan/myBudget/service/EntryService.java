@@ -32,4 +32,8 @@ public class EntryService {
     public int updateAmount(Entry entry) {
         return entryDao.updateAmount(entry);
     }
+
+    public int updateDescription(Entry entry) {
+        return entryDao.updateDescription(entry);
+    }
 }

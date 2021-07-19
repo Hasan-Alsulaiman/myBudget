@@ -32,8 +32,14 @@ public class EntryDataAccess implements EntryDao{
 
     @Override
     public int updateAmount(Entry entry) {
-        var sql = "UPDATE TABLE expenses SET amount = (?) where id = (?)";
-        return jdbcTemplate.update(sql);
+        var sql = "UPDATE expenses SET amount = (?) where id = (?)";
+        return jdbcTemplate.update(sql, entry.getAmount(), entry.getId());
+    }
+
+    @Override
+    public int updateDescription(Entry entry) {
+        var sql = "UPDATE expenses SET description = (?) where id = (?)";
+        return jdbcTemplate.update(sql, entry.getDescription(), entry.getId());
     }
 
     @Override
